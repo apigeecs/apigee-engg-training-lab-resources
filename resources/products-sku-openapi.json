@@ -22,11 +22,46 @@
   },
   "basePath": "/v1",
   "paths": {
-
     "/products": {
+      "post": {
+        "description": "<p>Create Product</p> Create new product",
+        "summary": "Create new product",
+        "operationId": "Create New Product",
+        "tags": [
+          "Products"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "New Product to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewProductDetail"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProductDetail"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          }
+        }
+      },
       "get": {
         "description": "<p>Product Detail</p> Detailed list of all Products.",
-        "summary": "Get All Product Details ",
+        "summary": "Get All Product Details",
         "operationId": "Get All Products",
         "tags": [
           "Products"
@@ -38,7 +73,7 @@
           "200": {
             "description": "OK",
             "schema": {
-                "$ref": "#/definitions/ProductDetails"
+              "$ref": "#/definitions/ProductDetails"
             }
           },
           "400": {
@@ -48,14 +83,13 @@
             "description": "Unauthorized access"
           }
         },
-        "parameters": [
-        ]
+        "parameters": []
       }
     },
     "/products/{product_id}": {
       "get": {
         "description": "<p>Product Detail</p> Detailed list of Product given the productId.",
-        "summary": "Product Detail ",
+        "summary": "Product Detail",
         "operationId": "Get Product",
         "tags": [
           "Products"
@@ -63,20 +97,6 @@
         "produces": [
           "application/json; charset=utf-8"
         ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-                "$ref": "#/definitions/ProductDetail"
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized access"
-          }
-        },
         "parameters": [
           {
             "name": "product_id",
@@ -85,35 +105,34 @@
             "type": "string",
             "required": true
           }
-
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProductDetail"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          }
+        }
       }
     },
-    "/products/{product_id}/skus": {
+    "/products/{product_id}/availability": {
       "get": {
-        "description": "<p>SKU Detail</p> for given productId.",
-        "summary": "Get SKU Detail for a given Product",
-        "operationId": "Get Product SKU",
+        "description": "<p>Product Availability</p> Detailed info of Product availability for the given productId.",
+        "summary": "Product Availability",
+        "operationId": "Get Product Availability",
         "tags": [
           "Products"
         ],
         "produces": [
           "application/json; charset=utf-8"
         ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-                "$ref": "#/definitions/SKUDetail"
-            }
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized access"
-          }
-        },
         "parameters": [
           {
             "name": "product_id",
@@ -122,18 +141,31 @@
             "type": "string",
             "required": true
           }
-
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProductAvailability"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          }
+        }
       }
     }
   },
   "definitions": {
-    "ProductDetails":{
+    "ProductDetails": {
       "description": "Product Details",
       "type": "array",
-      "items" : {
-            "$ref": "#/definitions/ProductDetail"
-          }
+      "items": {
+        "$ref": "#/definitions/ProductDetail"
+      }
     },
     "ProductDetail": {
       "description": "Product Details",
@@ -154,80 +186,116 @@
         "images": {
           "type": "array",
           "description": "An array of image objects",
-          "items" : {
+          "items": {
             "type": "string",
-            "description":"Image Url"
+            "description": "Image Url"
           }
-
         },
         "category": {
           "type": "array",
           "description": "An array of category objects",
-          "items" : {
+          "items": {
             "type": "string",
-            "description":"Product Categories"
+            "description": "Product Categories"
           }
-
         },
         "overall_rating": {
           "type": "number",
-          "format":"float",
+          "format": "float",
           "description": "Overall customer rating for the product"
         }
       }
     },
-    "SKUDetail": {
-      "description": "SKU Details",
+    "NewProductDetail": {
+      "description": "Product Details",
+      "type": "object",
+      "properties": {
+        "product_name": {
+          "type": "string",
+          "description": "Display name of the product"
+        },
+        "short_description": {
+          "type": "string",
+          "description": "A short description of the product"
+        },
+        "images": {
+          "type": "array",
+          "description": "An array of image objects",
+          "items": {
+            "type": "string",
+            "description": "Image Url"
+          }
+        },
+        "category": {
+          "type": "array",
+          "description": "An array of category objects",
+          "items": {
+            "type": "string",
+            "description": "Product Categories"
+          }
+        },
+        "overall_rating": {
+          "type": "number",
+          "format": "float",
+          "description": "Overall customer rating for the product"
+        }
+      }
+    },
+    "ProductAvailability": {
+      "description": "Product Availability Object",
       "type": "object",
       "properties": {
         "product_id": {
           "type": "string",
           "description": "A unique identifier for the product"
         },
+        "name": {
+          "type": "string",
+          "description": "SKU identifier"
+        },
         "sku_name": {
           "type": "string",
-          "description": "SKU name of the product"
+          "description": "SKU Name"
         },
         "sku_description": {
           "type": "string",
-          "description": "SKU description"
+          "description": "A short description of the product"
+        },
+        "available_quantity": {
+          "type": "integer",
+          "description": "available quantity"
+        },
+        "created_date": {
+          "type": "number",
+          "format": "date",
+          "description": "Created Date"
+        },
+        "expiry_date": {
+          "type": "number",
+          "format": "date",
+          "description": "Expiration Date"
         },
         "images": {
           "type": "array",
           "description": "An array of image objects",
-          "items" : {
+          "items": {
             "type": "string",
-            "description":"Image Url"
+            "description": "Image Url"
           }
-
-        },
-        "inventory_type":{
-          "type": "string",
-          "description": "Inventory Type"
-        },
-        "price": {
-          "type": "number",
-          "format":"float",
-          "description": "Price"
-        },
-        "created_date": {
-          "type": "string",
-          "format":"date",
-          "description": "Created Date"
-        },
-        "expiry_date": {
-          "type": "string",
-          "format":"date",
-          "description": "Expiry Date"
-        },
-        "available_quantity": {
-          "type": "integer",
-          "description": "Available Quantity"
         },
         "discount": {
           "type": "number",
-          "format":"float",
+          "format": "float",
           "description": "Discount"
+        },
+        "price": {
+          "type": "number",
+          "format": "float",
+          "description": "Price"
+        },
+        "inventory_type": {
+          "type": "string",
+          "description": "Inventory Type"
         }
       }
     }
