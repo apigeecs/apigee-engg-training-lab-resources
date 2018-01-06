@@ -120,6 +120,49 @@
             "description": "Unauthorized access"
           }
         }
+      },
+      "put": {
+        "description": "<p>Update Product</p> Update product for a given productId",
+        "summary": "Update Product",
+        "operationId": "Update Product",
+        "tags": [
+          "Products"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "Product identifier",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Product to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewProductDetail"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ProductDetail"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized access"
+          }
+        }
       }
     },
     "/products/{product_id}/availability": {
