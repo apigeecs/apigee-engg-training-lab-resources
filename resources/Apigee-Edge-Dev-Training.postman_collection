@@ -28,6 +28,82 @@
 			"response": []
 		},
 		{
+			"name": "GET / with API Key Target Server Error",
+			"request": {
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/?apikey=VALID_API_KEY",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						""
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "VALID_API_KEY",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Target Server Error"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /products with APIKey",
+			"request": {
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/products?apikey=VALID_API_KEY",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "VALID_API_KEY",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Detailed list of all Products with API Key"
+			},
+			"response": []
+		},
+		{
 			"name": "GET /products/{id}",
 			"request": {
 				"url": "https://{{org}}-{{env}}.apigee.net/v1/products/{{product_id}}",
