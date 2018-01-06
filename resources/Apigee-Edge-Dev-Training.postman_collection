@@ -1,167 +1,108 @@
 {
-  "variables": [],
-  "info": {
-    "name": "Apigee-Edge-Dev-Training",
-    "_postman_id": "7a07272c-7ce8-bdb6-d017-c5a4813222c3",
-    "description": "This collection contains all the calls as part of the labs",
-    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "GET /products",
-      "request": {
-        "url": "https://{{org}}-{{env}}.apigee.net/v1/products",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "description": "Detailed list of all Products"
-      },
-      "response": []
-    },
-    {
-      "name": "GET /products with API Key",
-      "request": {
-        "url": {
-          "raw": "https://{{org}}-{{env}}.apigee.net/v1/products?apikey=VALID_APIKEY_HERE",
-          "protocol": "https",
-          "host": [
-            "{{org}}-{{env}}",
-            "apigee",
-            "net"
-          ],
-          "path": [
-            "v1",
-            "products"
-          ],
-          "query": [
-            {
-              "key": "apikey",
-              "value": "VALID_APIKEY_HERE",
-              "equals": true,
-              "description": ""
-            }
-          ],
-          "variable": []
-        },
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": "Detailed list of all Products"
-      },
-      "response": []
-    },
-    {
-      "name": "GET / with API Key Target Server Error",
-      "request": {
-        "url": {
-          "raw": "https://{{org}}-{{env}}.apigee.net/v1/?apikey=VALID_APIKEY_HERE",
-          "protocol": "https",
-          "host": [
-            "{{org}}-{{env}}",
-            "apigee",
-            "net"
-          ],
-          "path": [
-            "v1",
-            ""
-          ],
-          "query": [
-            {
-              "key": "apikey",
-              "value": "VALID_APIKEY_HERE",
-              "equals": true,
-              "description": ""
-            }
-          ],
-          "variable": []
-        },
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": "Detailed list of all Products"
-      },
-      "response": []
-    },
-    {
-      "name": "GET /products/{id}",
-      "request": {
-        "url": "https://{{org}}-{{env}}.apigee.net/v1/products/1368433309790",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "description": "Detailed list of Product given the productId"
-      },
-      "response": []
-    },
-    {
-      "name": "GET /products/{id}/skus",
-      "request": {
-        "url": "https://{{org}}-{{env}}.apigee.net/v1/products/1368433309790/skus",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "description": "SKU Information for a Product"
-      },
-      "response": []
-    },
-    {
-      "name": "PUT /products/{id}",
-      "request": {
-        "url": "https://{{org}}-{{env}}.apigee.net/v1/products/1368433309790",
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"overall_rating\": 4.5\n}"
-        },
-        "description": "Update Product info"
-      },
-      "response": []
-    }
-  ]
+	"variables": [],
+	"info": {
+		"name": "Apigee-Edge-Dev-Training",
+		"_postman_id": "7b1900ad-4802-5ab0-69b1-cd71e933b876",
+		"description": "This collection contains all the calls as part of the labs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /products",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/products",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Detailed list of all Products"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /products/{id}",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/products/{{product_id}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Detailed list of Product given the productId"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /products/{id}/availability",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/products/{{product_id}}/availability",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get Product Availability by Product Id"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /products",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/products",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"36421452\",\n  \"category\": [\n    \"Cameras\"\n  ],\n  \"images\": [\n    \"https://cdn.pixabay.com/photo/2017/04/22/10/44/CAmeRA-2251051_1280.jpg\"\n  ],\n  \"overall_rating\": 6.41,\n  \"product_name\": \"Funfilm X-T3\",\n  \"short_description\": \"16.4MP Sensor, Weather Resistant - dust-resistant, water-resistant and -10 Degree C low-temperature operation\"\n}"
+				},
+				"description": "Create New Product"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /products/{id}",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/products/{{product_id}}",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"overall_rating\": 6.41\n}"
+				},
+				"description": "Update Product by Product Id"
+			},
+			"response": []
+		}
+	]
 }
