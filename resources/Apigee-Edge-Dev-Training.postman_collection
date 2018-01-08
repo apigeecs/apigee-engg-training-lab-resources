@@ -179,6 +179,26 @@
 				"description": "Update Product by Product Id"
 			},
 			"response": []
+		},
+		{
+			"name": "PUT /products/{id} (Basic Auth)",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/products/{{product_id}}",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"overall_rating\": 8.41\n}"
+				},
+				"description": "Update Product by Product Id using Basic Auth policy"
+			},
+			"response": []
 		}
 	]
 }
