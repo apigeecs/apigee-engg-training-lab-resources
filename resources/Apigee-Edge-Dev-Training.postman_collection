@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Apigee-Edge-Dev-Training",
-		"_postman_id": "7b1900ad-4802-5ab0-69b1-cd71e933b876",
+		"_postman_id": "a3c11fdc-39d2-2dd5-e022-27efa5c04897",
 		"description": "This collection contains all the calls as part of the labs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -60,7 +60,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Target Server Error"
 			},
 			"response": []
@@ -98,7 +101,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Detailed list of all Products with API Key"
 			},
 			"response": []
@@ -135,7 +141,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Get a product that doesnt exist. Used for logging lab"
 			},
 			"response": []
@@ -152,7 +161,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Get Product Availability by Product Id"
 			},
 			"response": []
@@ -269,8 +281,31 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Get Store information for a given Store ID"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /message-validation",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/message-validation",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<store>\n    <entities>\n        <uuid>971d4e43-f0b0-11e7-862e-12c1e35638f0</uuid>\n        <type>store</type>\n        <name>Shop 3</name>\n        <affiliate>HJK</affiliate>\n        <id>1</id>\n        <location>\n            <latitude>38.587595</latitude>\n            <longitude>-121.550184</longitude>\n        </location>\n        <phone>916-373-2200</phone>\n        <site_type>store</site_type>\n        <address>755 Riverpoint Ct, West Sacramento, CA 95605, USA</address>\n    </entities>\n    <timestamp>1515691152268</timestamp>\n    <duration>40</duration>\n</store>"
+				},
+				"description": "for optional Message Validation lab"
 			},
 			"response": []
 		}
