@@ -290,6 +290,51 @@
 			"response": []
 		},
 		{
+			"name": "GET /stores/{id} Accept:application/xml",
+			"request": {
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/locations/stores/{{storeId}}?element=entities",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						"locations",
+						"stores",
+						"{{storeId}}"
+					],
+					"query": [
+						{
+							"key": "element",
+							"value": "entities",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get Store information for a given Store ID"
+			},
+			"response": []
+		},
+		{
 			"name": "POST /message-validation",
 			"request": {
 				"url": "https://{{org}}-{{env}}.apigee.net/message-validation",
