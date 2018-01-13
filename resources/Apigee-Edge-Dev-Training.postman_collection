@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Apigee-Edge-Dev-Training",
-		"_postman_id": "a3c11fdc-39d2-2dd5-e022-27efa5c04897",
+		"_postman_id": "7b1900ad-4802-5ab0-69b1-cd71e933b876",
 		"description": "This collection contains all the calls as part of the labs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -60,10 +60,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": "Target Server Error"
 			},
 			"response": []
@@ -101,11 +98,47 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": "Detailed list of all Products with API Key"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /products/{id} with APIKey",
+			"request": {
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/products/{{product_id}}?apikey=VALID_API_KEY",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						"products",
+						"{{product_id}}"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "VALID_API_KEY",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Fetch Product using Product with API Key"
 			},
 			"response": []
 		},
@@ -141,10 +174,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": "Get a product that doesnt exist. Used for logging lab"
 			},
 			"response": []
@@ -161,10 +191,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": "Get Product Availability by Product Id"
 			},
 			"response": []
@@ -172,7 +199,28 @@
 		{
 			"name": "POST /products",
 			"request": {
-				"url": "https://{{org}}-{{env}}.apigee.net/v1/products",
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/products?apikey=VALID_API_KEY",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "VALID_API_KEY",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -186,6 +234,88 @@
 					"raw": "{\n  \"name\": \"36421452\",\n  \"category\": [\n    \"Cameras\"\n  ],\n  \"images\": [\n    \"https://cdn.pixabay.com/photo/2017/04/22/10/44/CAmeRA-2251051_1280.jpg\"\n  ],\n  \"overall_rating\": 6.41,\n  \"product_name\": \"Funfilm X-T3\",\n  \"short_description\": \"16.4MP Sensor, Weather Resistant - dust-resistant, water-resistant and -10 Degree C low-temperature operation\"\n}"
 				},
 				"description": "Create New Product"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /products with APIKey (Regex)",
+			"request": {
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/products?apikey=VALID_API_KEY",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "VALID_API_KEY",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"36421452\",\n  \"category\": [\n    \"Cameras\"\n  ],\n  \"images\": [\n    \"https://cdn.pixabay.com/photo/2017/04/22/10/44/CAmeRA-2251051_1280.jpg\"\n  ],\n  \"overall_rating\": 6.41,\n  \"product_name\": \"<sql>delete from products</sql>\",\n  \"short_description\": \"16.4MP Sensor, Weather Resistant - dust-resistant, water-resistant and -10 Degree C low-temperature operation\"\n}"
+				},
+				"description": "Create New Product with a body that has security issues"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /products with APIKey (JSONThreat)",
+			"request": {
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/products?apikey=VALID_API_KEY",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "VALID_API_KEY",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"36421452\",\n  \"category\": [\n    \"Cameras\"\n  ],\n  \"images\": [\n    \"https://cdn.pixabay.com/photo/2017/04/22/10/44/CAmeRA-2251051_1280.jpg\"\n  ],\n  \"overall_rating\": 6.41,\n  \"product_name\": \"Funfilm X-T3\",\n  \"short_description\": \"16.4MP Sensor, Weather Resistant - dust-resistant, water-resistant and -10 Degree C low-temperature operation\",\n  \"test\": \"test\"\n}"
+				},
+				"description": "Create New Product with a body"
 			},
 			"response": []
 		},
@@ -281,10 +411,7 @@
 						"description": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"description": "Get Store information for a given Store ID"
 			},
 			"response": []
