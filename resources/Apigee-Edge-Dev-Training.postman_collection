@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Apigee-Edge-Dev-Training",
-		"_postman_id": "7b1900ad-4802-5ab0-69b1-cd71e933b876",
+		"_postman_id": "b6586f66-fabb-84a6-01d4-4d0078bae3c1",
 		"description": "This collection contains all the calls as part of the labs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -15,8 +15,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -46,8 +45,7 @@
 						{
 							"key": "apikey",
 							"value": "VALID_API_KEY",
-							"equals": true,
-							"description": ""
+							"equals": true
 						}
 					],
 					"variable": []
@@ -56,11 +54,13 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Target Server Error"
 			},
 			"response": []
@@ -84,8 +84,7 @@
 						{
 							"key": "apikey",
 							"value": "VALID_API_KEY",
-							"equals": true,
-							"description": ""
+							"equals": true
 						}
 					],
 					"variable": []
@@ -94,11 +93,13 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Detailed list of all Products with API Key"
 			},
 			"response": []
@@ -123,8 +124,7 @@
 						{
 							"key": "apikey",
 							"value": "VALID_API_KEY",
-							"equals": true,
-							"description": ""
+							"equals": true
 						}
 					],
 					"variable": []
@@ -133,11 +133,13 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Fetch Product using Product with API Key"
 			},
 			"response": []
@@ -150,8 +152,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -170,11 +171,13 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Get a product that doesnt exist. Used for logging lab"
 			},
 			"response": []
@@ -187,11 +190,13 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Get Product Availability by Product Id"
 			},
 			"response": []
@@ -215,8 +220,7 @@
 						{
 							"key": "apikey",
 							"value": "VALID_API_KEY",
-							"equals": true,
-							"description": ""
+							"equals": true
 						}
 					],
 					"variable": []
@@ -225,8 +229,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -256,8 +259,7 @@
 						{
 							"key": "apikey",
 							"value": "VALID_API_KEY",
-							"equals": true,
-							"description": ""
+							"equals": true
 						}
 					],
 					"variable": []
@@ -266,8 +268,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -297,8 +298,7 @@
 						{
 							"key": "apikey",
 							"value": "VALID_API_KEY",
-							"equals": true,
-							"description": ""
+							"equals": true
 						}
 					],
 					"variable": []
@@ -307,8 +307,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -327,8 +326,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -347,8 +345,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -367,8 +364,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -387,8 +383,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -400,10 +395,32 @@
 			"response": []
 		},
 		{
-			"name": "GET /stores/{id}",
+			"name": "PUT /products/{id} with API Key",
 			"request": {
-				"url": "https://{{org}}-{{env}}.apigee.net/v1/locations/stores/{{storeId}}",
-				"method": "GET",
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/v1/products/{{product_id}}?apikey=VALID_API_KEY",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"v1",
+						"products",
+						"{{product_id}}"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "VALID_API_KEY",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -411,7 +428,29 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"overall_rating\": 10.41\n}"
+				},
+				"description": "Update Product by Product Id "
+			},
+			"response": []
+		},
+		{
+			"name": "GET /stores/{id}",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/locations/stores/{{storeId}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Get Store information for a given Store ID"
 			},
 			"response": []
@@ -437,8 +476,7 @@
 						{
 							"key": "element",
 							"value": "entities",
-							"equals": true,
-							"description": ""
+							"equals": true
 						}
 					],
 					"variable": []
@@ -447,16 +485,17 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Accept",
-						"value": "application/xml",
-						"description": ""
+						"value": "application/xml"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Get Store information for a given Store ID"
 			},
 			"response": []
@@ -469,8 +508,7 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/xml",
-						"description": ""
+						"value": "application/xml"
 					}
 				],
 				"body": {
