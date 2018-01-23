@@ -518,6 +518,41 @@
 				"description": "for optional Message Validation lab"
 			},
 			"response": []
+		},
+		{
+			"name": "POST /accesstoken",
+			"request": {
+				"url": {
+					"raw": "https://{{org}}-{{env}}.apigee.net/oauth/accesstoken?grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"{{org}}-{{env}}",
+						"apigee",
+						"net"
+					],
+					"path": [
+						"oauth",
+						"accesstoken"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get an OAuth 2.0 access token"
+			},
+			"response": []
 		}
 	]
 }
