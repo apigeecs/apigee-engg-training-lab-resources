@@ -1,6 +1,6 @@
 {
   "swagger": "2.0",
-  "host": "apibaas-trial.apigee.net",
+  "host": "orgname-env.apigee.net",
   "schemes": [
     "https",
     "http"
