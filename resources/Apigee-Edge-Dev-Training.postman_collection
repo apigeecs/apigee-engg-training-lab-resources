@@ -553,6 +553,31 @@
 				"description": "Get an OAuth 2.0 access token"
 			},
 			"response": []
+		},
+		{
+			"name": "GET /products with Bearer Token",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/v1/products",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer token",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Detailed list of all Products with Bearer Token"
+			},
+			"response": []
 		}
 	]
 }
