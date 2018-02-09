@@ -522,33 +522,74 @@
 		{
 			"name": "POST /accesstoken",
 			"request": {
-				"url": {
-					"raw": "https://{{org}}-{{env}}.apigee.net/oauth/accesstoken?grant_type=client_credentials",
-					"protocol": "https",
-					"host": [
-						"{{org}}-{{env}}",
-						"apigee",
-						"net"
-					],
-					"path": [
-						"oauth",
-						"accesstoken"
-					],
-					"query": [
+				"url": "https://{{org}}-{{env}}.apigee.net/oauth/accesstoken",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
 						{
 							"key": "grant_type",
 							"value": "client_credentials",
-							"equals": true,
-							"description": ""
+							"description": "",
+							"type": "text"
 						}
-					],
-					"variable": []
+					]
 				},
+				"description": "Get an OAuth 2.0 access token"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /accesstoken (password grant)",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/oauth/accesstoken",
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=",
+						"description": ""
+					}
+				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "apininja",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "iloveapis",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
 				},
 				"description": "Get an OAuth 2.0 access token"
 			},
