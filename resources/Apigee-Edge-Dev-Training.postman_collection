@@ -619,6 +619,44 @@
 				"description": "Detailed list of all Products with Bearer Token"
 			},
 			"response": []
+		},
+		{
+			"name": "POST /refreshtoken",
+			"request": {
+				"url": "https://{{org}}-{{env}}.apigee.net/oauth/refresh_accesstoken",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Y2xpZW50X2lkOmNsaWVudF9zZWNyZXQ=",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "refreshtoken",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }
